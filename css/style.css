@@ -3,6 +3,9 @@
   --color-blue: #1763f8;
   --color-yellow: #d6ff62;
   --color-pink: #f6dcff;
+  --color-btn: #5c00fb;
+
+  --sect-padd: 80px;
 
   --trans: 0.3s;
 }
@@ -27,6 +30,15 @@ img {
   max-width: 100%;
   display: block;
 }
+/* speacial class */
+.sp-header {
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: bold;
+}
+/* End speacial class */
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -53,8 +65,6 @@ img {
 }
 
 /* header */
-.header {
-}
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -68,10 +78,33 @@ img {
   font-size: 20px;
   font-weight: bold;
 }
+.header .container .navIcone {
+  font-size: 20px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: none;
+}
+.header .container .navIcone:is(:hover, :focus) {
+  background-color: black;
+  color: white;
+}
+.header .container .navBare {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
 .header .container .nav {
   display: flex;
   align-items: center;
   height: 100%;
+  margin: auto;
 }
 .header .container .nav li a {
   min-height: 80px;
@@ -86,6 +119,7 @@ img {
   font-weight: bold;
   transition: var(--trans);
   position: relative;
+  letter-spacing: 1px;
 }
 .header .container .nav li a:hover {
   color: var(--color-black);
@@ -117,3 +151,291 @@ img {
 .header .container .header-btn:hover {
   background-color: var(--color-blue);
 }
+@media (max-width: 992px) {
+  .header .container .navIcone {
+    display: flex;
+  }
+  .header .container .navBare {
+    display: none;
+  }
+}
+/* End Header */
+
+/* Home Section */
+.home-section {
+  background-image: url(../assets/mg.png);
+  min-height: calc(100vh - 82px);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-section .container {
+  display: flex;
+  align-items: center;
+}
+.home-section .container .home-body {
+  flex-basis: 450px;
+}
+.home-section .container .home-body > h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+  margin-top: 10px;
+}
+.home-section .container .home-body > h1 span {
+  background-color: #bbdcfd;
+  padding: 3px;
+}
+.home-section .container .home-body > p {
+  color: #888;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.home-section .container .home-body > .btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+}
+.home-section .container .home-body > .btns .btn-more,
+.home-section .container .home-body > .btns .btn-down {
+  width: 160px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-btn);
+  color: var(--color-btn);
+  font-weight: bold;
+  border-radius: 5px;
+  transition: var(--trans);
+}
+.home-section .container .home-body > .btns .btn-down {
+  background-color: var(--color-btn);
+  color: white;
+}
+.home-section .container .home-body > .btns .btn-down:hover {
+  background-color: transparent;
+  color: var(--color-btn);
+}
+.home-section .container .home-body > .btns .btn-more:hover {
+  opacity: 0.4;
+}
+.home-section .container .home-body > .teams {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.home-section .container .home-body > .teams .team {
+  display: flex;
+  align-items: center;
+}
+.home-section .container .home-body > .teams .team .img-team {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--color-black);
+  box-shadow: 2px 2px 3px var(--color-black);
+}
+.home-section .container .home-body > .teams .team .img-team:not(:first-child) {
+  margin-left: -10px;
+}
+.home-section .container .home-body > .teams .user {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-weight: bold;
+}
+.home-section .container .home-body > .teams .user span {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #888;
+  font-weight: bold;
+}
+.home-section .container .home-body > .playAppStore {
+  padding-top: 40px;
+  display: flex;
+  gap: 10px;
+}
+.home-section .container .home-body > .playAppStore > a {
+  display: block;
+  width: 90px;
+}
+.home-section .container .home-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 760px) {
+  .home-section .container {
+    justify-content: center;
+  }
+  .home-section .container .home-body {
+    flex-basis: 90%;
+  }
+  .home-section .container .home-body > .teams {
+    justify-content: flex-end;
+  }
+  .home-section .container .home-body > .playAppStore {
+    justify-content: flex-end;
+  }
+  .home-section .container .home-img {
+    display: none;
+  }
+}
+/* End Home Section */
+
+/* why Section */
+.why-section {
+  padding-top: var(--sect-padd);
+  padding-bottom: var(--sect-padd);
+}
+.why-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.why-section .container .why-img {
+  position: relative;
+  /* flex-basis: 70%; */
+  width: 400px;
+  border-radius: 6px;
+  box-shadow: 5px 5px black;
+  overflow: hidden;
+}
+.why-section .container .why-img::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.why-section .container .why-img > img {
+  border-radius: 6px;
+}
+.why-section .container .why-body {
+  width: 600px;
+}
+.why-section .container .why-body .whyBody-title {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.3;
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}
+.why-section .container .why-body > p {
+  font-size: 15px;
+  color: #888;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.why-section .container .why-body .whyBody-tools {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template: "group group tab tab" "not not not not";
+  gap: 10px;
+}
+.why-section .container .why-body .whyBody-tools .tool:first-child {
+  grid-area: group;
+  background-color: var(--color-pink);
+}
+.why-section .container .why-body .whyBody-tools .tool:nth-child(2) {
+  grid-area: tab;
+}
+.why-section .container .why-body .whyBody-tools .tool:last-child {
+  grid-area: not;
+  background-color: #c4ff58;
+}
+.why-section .container .why-body .whyBody-tools .tool {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 4px 4px black;
+}
+.why-section .container .why-body .whyBody-tools .tool > i {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+.why-section .container .why-body .whyBody-tools .tool > .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.why-section .container .why-body .whyBody-tools .tool > p {
+  line-height: 1.5;
+  color: #333;
+}
+@media (max-width: 992px) {
+  .why-section .container {
+    justify-content: center;
+  }
+  .why-section .container .why-img {
+    display: none;
+  }
+  .why-section .container .why-body {
+    width: 100%;
+  }
+}
+/* End why Section */
+
+/* status Section */
+.status-section {
+  padding-top: calc(var(--sect-padd) - 20px);
+  padding-bottom: calc(var(--sect-padd) - 20px);
+}
+.status-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-black);
+  flex-wrap: wrap;
+}
+.status-section .container > div {
+  padding: 10px 0;
+  flex-basis: calc(100% / 4);
+  font-weight: bold;
+  font-size: 30px;
+}
+.status-section .container > div:not(:last-child) {
+  border-right: 2px solid #333;
+}
+.status-section .container > div > div {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #888;
+  text-transform: capitalize;
+}
+@media (max-width: 550px) {
+  .status-section .container > div {
+    flex-basis: 50%;
+  }
+  .status-section .container > div:first-child {
+    border-right: 0;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+  }
+  .status-section .container > div:nth-child(2) {
+    border-right: 0;
+    border-bottom: 2px solid #333;
+  }
+}
+/* End status Section */
