@@ -35,6 +35,7 @@ Creat slide using js
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid 
 - JavaScript
 
 ### Learning
