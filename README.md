@@ -20,6 +20,7 @@ Transforme design to a responsive webpage with HTML, CSS and JavaScript.
 ### The challenge
 
 - Creat slide using js
+
 ![](./assets/travelfastq.gif)
 
 ### Links
