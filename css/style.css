@@ -89,6 +89,7 @@ input:focus {
   min-height: 80px;
   color: var(--color-black);
   border-bottom: 2px solid var(--color-black);
+  position: relative;
 }
 .header .container .header-logo {
   font-size: 20px;
@@ -106,7 +107,7 @@ input:focus {
   transition: 0.3s;
   display: none;
 }
-.header .container .navIcone:is(:hover, :focus) {
+.header .container .navIcone:is(:hover, :focus, .active) {
   background-color: black;
   color: white;
 }
@@ -173,6 +174,45 @@ input:focus {
   }
   .header .container .navBare {
     display: none;
+  }
+  .header .container .navBare.active {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    background: black;
+    padding: 20px;
+    left: 0;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+    z-index: 1000;
+  }
+  .header .container .navBare.active .nav {
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .header .container .navBare.active .nav li {
+    width: 100%;
+  }
+  .header .container .navBare.active .nav li a {
+    justify-content: flex-start;
+    z-index: 1;
+  }
+  .header .container .nav li a:hover {
+    color: white;
+  }
+  .header .container .navBare.active .nav li a::before {
+    z-index: -1;
+    border-radius: 3px;
+  }
+  .header .container .navBare.active .nav li a:hover::before {
+    height: 100%;
+  }
+  .header .container .navBare.active > a {
+    width: 100%;
   }
 }
 /* End Header */
@@ -698,13 +738,13 @@ input:focus {
 }
 .footer-section .container .row-email > form .inp > #email {
   height: 35px;
-  width: 330px;
+  width: 350px;
   background-color: #dcdcdc;
   border: 0;
   font-size: 15px;
   padding-left: 40px;
+  padding-right: 90px;
   font-weight: var(--fw-bold);
-  text-transform: capitalize;
   border-radius: 20px;
   border: 1px solid #fff;
   transition: var(--trans);
