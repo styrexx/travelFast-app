@@ -1,5 +1,3 @@
-// 37 05 97 53 86 83 24 67
-
 // Get The Nave Bar
 const navIconeEle = document.querySelector(".header .container .navIcone ");
 const navBarEle = document.querySelector(".header .container .navBare ");
